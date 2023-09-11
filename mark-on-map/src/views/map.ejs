@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Weed Mapping</title>
+    <title>Weed Mapping - <%= title %></title>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <style>
       html,
@@ -16,7 +16,8 @@
     </style>
     <script>
       function initMap() {
-        const center = new google.maps.LatLng(-33.712451, 150.311823);
+        var latlong = <%- points %>
+        const center = new google.maps.LatLng(...latlong);
         const map = new google.maps.Map(document.getElementById('map'), {
           zoom: 9,
           center: center,
